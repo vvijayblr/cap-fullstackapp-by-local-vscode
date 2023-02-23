@@ -7,14 +7,15 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^6",
+    "@sap/xssec": "^3",
     "express": "^4",
     "hdb": "^0.19.0",
-    "@sap/xssec": "^3",
     "passport": "^0"
   },
   "scripts": {
     "start": "cds run",
-    "hana-deploy": "cds deploy --to hana:cap-bkshop-demo-db"
+    "hana-deploy": "cds deploy --to hana:cap-bkshop-demo-db",
+    "watch-fe-bkshop": "cds watch --open fe-bkshop/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "build": {
@@ -39,5 +40,14 @@
         "kind": "cloudfoundry"
       }
     }
+  },
+  "sapux": [
+    "app/fe-bkshop"
+  ],
+  "devDependencies": {
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sap/ux-specification": "^1.102.17",
+    "@sapui5/ts-types": "^1.92.2",
+    "eslint": "^7.32.0"
   }
 }
